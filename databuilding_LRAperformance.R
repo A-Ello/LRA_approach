@@ -29,8 +29,8 @@ load("your_directory/datacens25_extr_erorr_r2.Rdata")
 load("your_directory/datacens50_extr_erorr_r2.Rdata")
 
 
-# Create one dataframe for each f and censoring rate (transformat° used by the authors a.k.a fcomputation)
-# One dataframe contains the 95%CI computed with the corresponding f then the LRA is computed for each fE (a.k.a fextraction)
+# Create one dataframe for each f and censoring rate (transformation used by the authors a.k.a fcomputation)
+# One dataframe contains the 95%CI computed with the corresponding fcomputation then the LRA is computed for each fE (a.k.a fextraction)
 
 var_names_df_LRA_fA_id <- c("sample_size", "survival_initial", "survival_rounded_r2", "survival_rounded_r3", "survival_rounded_r4", 
                             "id_low_r2", "id_low_r3", "id_low_r4", "id_up_r2", "id_up_r3", "id_up_r4","f_author", 
@@ -732,7 +732,7 @@ for (k in df_LRA_arcsine_names) {
 }
 
 
-## Create categories of extraction error after LRA ----
+## Create categories of extraction error after using LRA ----
 list_df_LRA_fA <- ls(pattern = "^df_LRA_fA_")
 for (df_name in list_df_LRA_fA) {
   df <- get(df_name)
